@@ -40,7 +40,7 @@ async function upload(token, hook, sourceText, readmeText, directory, filename, 
   }
   const { refSHA, ref } = await git.getReference(default_branch);
   const source = await git.createBlob(sourceText, `${directory}/${filename}`); // 소스코드 파일
-  const readme = await git.createBlob(readmeText, `${directory}/README.md`); // readme 파일
+  //const readme = await git.createBlob(readmeText, `${directory}/README.md`); // readme 파일
   const treeSHA = await git.createTree(refSHA, [source, readme]);
   const commitSHA = await git.createCommit(commitMessage, treeSHA, refSHA);
   await git.updateHead(ref, commitSHA);
