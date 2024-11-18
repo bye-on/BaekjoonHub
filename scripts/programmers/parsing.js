@@ -42,9 +42,11 @@ async function parseData() {
 
 async function makeData(origin) {
   const { problem_description, problemId, level, result_message, division, language_extension, title, runtime, memory, code } = origin;
-  const directory = `프로그래머스/${level}/${problemId}. ${convertSingleCharToDoubleChar(title)}`;
-  const message = `[${level.replace('lv', 'level ')}] Title: ${title}, Time: ${runtime}, Memory: ${memory} -BaekjoonHub`;
-  const fileName = `${convertSingleCharToDoubleChar(title)}.${language_extension}`;
+  // const directory = `프로그래머스/${level}/${problemId}. ${convertSingleCharToDoubleChar(title)}`;
+  const directory = `dnaeuuon/Algorithm`;
+  // const message = `[${level.replace('lv', 'level ')}] Title: ${title}, Time: ${runtime}, Memory: ${memory} -BaekjoonHub`;
+  const message = `${problem_tags.join(', ')} ${title}`;
+  // const fileName = `${convertSingleCharToDoubleChar(title)}.${language_extension}`;
   // prettier-ignore
   const readme =
     `# [${level.replace('lv', 'level ')}] ${title} - ${problemId} \n\n`
