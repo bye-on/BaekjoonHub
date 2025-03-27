@@ -47,7 +47,7 @@ async function makeData(origin) {
   const { problem_description, problemId, level, result_message, division, language_extension, title, runtime, memory, code, language } = origin;
   const directory = await getDirNameByOrgOption(`프로그래머스/${level}/${problemId}. ${convertSingleCharToDoubleChar(title)}`, language);
   const levelWithLv = `${level}`.includes('lv') ? level : `lv${level}`.replace('lv', 'level ');
-  const message = `[${levelWithLv}] Title: ${title}, Time: ${runtime}, Memory: ${memory} -BaekjoonHub`;
+  const message = `[${levelWithLv}] ${problemId}: ${title}`;
   const fileName = `${convertSingleCharToDoubleChar(title)}.${language_extension}`;
   const dateInfo = getDateString(new Date(Date.now()));
   // prettier-ignore
